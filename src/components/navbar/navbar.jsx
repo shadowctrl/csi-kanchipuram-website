@@ -10,11 +10,11 @@ const navbar = () => {
   });
   return (
     <navbar className="w-full flex justify-between items-center">
-      <a href="/" className="p-6">
+      <a href="/" className="p-6 ">
         <img src={`/images/logo.png`}></img>
       </a>
 
-      <ul className="list-none flex justify-end items-center">
+      <ul className="list-none flex justify-end items-center rounded-2xl">
         {navcon.map((item, key) => (
           <li
             className=" opacity-0 mr-12 text-[22px] text-sky-200 font-bold font-poppins animatee"
