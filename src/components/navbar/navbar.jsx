@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import navcon from "../../../constants/navbar";
 import "./navbar.css";
-
+import { motion } from "framer-motion";
 const navbar = () => {
   useEffect(() => {
     document.title = "CSI - Kancheepuram Chapter";
   });
   return (
-    <navbar className="w-full flex justify-between items-center">
+    <motion.navbar className="w-full flex justify-between items-center">
       {console.log()}
       <a href="/" className="p-10 ">
-        <img src={`/images/logo.png`} className="w-[75%]"></img>
+        <img src={`/images/logo.png`} className="w-[80%] rounded-full"></img>
       </a>
 
       <ul className="list-none flex justify-end items-center rounded-2xl">
@@ -23,7 +23,7 @@ const navbar = () => {
           </li>
         ))}
       </ul>
-    </navbar>
+    </motion.navbar>
   );
 };
 
