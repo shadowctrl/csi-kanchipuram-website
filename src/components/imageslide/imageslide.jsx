@@ -15,6 +15,7 @@ const imageslide = () => {
       <div className="absolute">
         <BsChevronCompactLeft size={30} />
       </div>
+      <div></div>
       <div className="absolute">
         <BsChevronCompactRight size={30} />
       </div>
