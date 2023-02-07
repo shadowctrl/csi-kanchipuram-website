@@ -29,6 +29,7 @@
 .scroll{
   scroll-snap-type: mandatory y;
   overflow-y: scroll;
+  
 }
 
 .text-gradient {

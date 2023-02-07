@@ -13,11 +13,11 @@ function App() {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
-      <div className={`${styles.paddingX} bg-slate-700 overflow-hidden`}>
-        <div className="w-full snap-start">
+      <div className={`${styles.paddingX} bg-slate-700 overflow-hidden `}>
+        <div className="w-full ">
           <Navbar />
         </div>
-        <div className=" border-double border-4 border-slate-500"></div>
+        <div className=" border-double border-4 border-slate-500 "></div>
         <div className={`w-full ${styles.flexCenter} `}>
           <Imageslide />
         </div>
