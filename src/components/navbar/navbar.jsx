@@ -7,7 +7,7 @@ const navbar = () => {
     document.title = "CSI - Kancheepuram Chapter";
   });
   return (
-    <motion.navbar className="w-full flex justify-between items-center">
+    <motion.div className="w-full flex justify-between items-center">
       {console.log()}
       <a href="/" className="p-10 ">
         <img src={`/images/logo.png`} className="w-[80%] rounded-full"></img>
@@ -23,7 +23,7 @@ const navbar = () => {
           </li>
         ))}
       </ul>
-    </motion.navbar>
+    </motion.div>
   );
 };
 
