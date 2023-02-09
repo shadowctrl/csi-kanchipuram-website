@@ -1,5 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { Navbar, Main, Imageslide } from "./components";
 import { styles } from "../constants/";
@@ -21,7 +19,7 @@ function App() {
         <div className={`w-full ${styles.flexCenter} `}>
           <Imageslide />
         </div>
-        <div className={`w-full ${styles.flexCenter}`}>
+        <div className={``}>
           <Main />
         </div>
       </div>

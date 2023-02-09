@@ -1,11 +1,11 @@
 .imagefade{
 
-    animation: imagefade 1s linear 0.5s forwards ;
+    animation: imagefade 1.5s linear 0.5s forwards ;
 }
 
 @keyframes imagefade {
     0%{
-        opacity:50% ;
+        opacity:25% ;
     }
     100%{
         opacity: 100%;

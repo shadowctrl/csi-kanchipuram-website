@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
@@ -47,22 +47,22 @@ const imageslide = () => {
   }, 10000);}
 */
   return (
-    <div className="group flex justify-center items-center py-6 ">
+    <motion.div className="group flex justify-center items-center py-6  ">
       <div className="snap-start">
         <img
-          className={` rounded max-h-[600px] imagefade`}
+          className={` rounded max-h-[600px] imagefade `}
           src={images[CurrentIndex].url}
         />
       </div>
 
-      <div className="absolute top-[73%] translate-x-[350px] translate-y-[-50%] left-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer ">
+      <div className=" hidden group-hover:block absolute top-[73%] translate-x-[350px] translate-y-[-50%] left-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer ">
         <IoIosArrowDropleftCircle size={30} onClick={prevSlide} />
       </div>
 
-      <div className="absolute top-[73%] -translate-x-[350px] translate-y-[-50%] right-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer">
+      <div className="hidden group-hover:block absolute top-[73%] -translate-x-[350px] translate-y-[-50%] right-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer">
         <IoIosArrowDroprightCircle size={30} onClick={nextSlide} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
