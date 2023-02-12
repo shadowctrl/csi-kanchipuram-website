@@ -35,7 +35,7 @@ const navbar = () => {
       <ul className="list-none flex justify-end items-center rounded-lg ml-28">
         {navcon.items.map((item, key) => (
           <li
-            className=" opacity-0 text-[20px] mr-10 text-sky-200 font-bold font-poppins animatee"
+            className=" opacity-0 text-[20px] mr-7 text-sky-200 font-bold font-poppins animatee"
             key={key}
           >
             <a href={`/${item}`}> {item}</a>
@@ -46,13 +46,13 @@ const navbar = () => {
       <div className="flex justify-end items-center mr-20">
         {menu ? (
           <RiMenuUnfoldFill
-            size={40}
+            size={32}
             className="cursor-pointer text-sky-200"
             onClick={() => setMenu((i) => !i)}
           />
         ) : (
           <RiMenuLine
-            size={40}
+            size={32}
             className="cursor-pointer text-sky-200"
             onClick={() => setMenu((i) => !i)}
           />
@@ -61,11 +61,11 @@ const navbar = () => {
         <div
           className={`${
             menu ? "flex" : "hidden"
-          }  absolute bg-slate-600 mt-[13%] rounded-xl bg-slate`}
+          }  absolute animateTop bg-gray-gradient mt-[14%] rounded-xl bg-slate sidebar`}
         >
           <ul className="list-none flex flex-col m-5">
             {navcon.items2.map((item, key) => (
-              <li key={key} className="my-1">
+              <li key={key} className="my-1 show opacity-0">
                 <a
                   href={`/${item}`}
                   className="text-sky-200 font-bold font-poppins text-[20px] "
@@ -82,4 +82,3 @@ const navbar = () => {
 };
 
 export default navbar;
-                          
