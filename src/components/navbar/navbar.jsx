@@ -61,11 +61,11 @@ const navbar = () => {
         <div
           className={`${
             menu ? "flex" : "hidden"
-          }  absolute animateTop bg-gray-gradient mt-[14%] rounded-xl bg-slate sidebar`}
+          }  absolute animateTop bg-darkblue-gradient mt-[14%] rounded-xl bg-slate sidebar`}
         >
           <ul className="list-none flex flex-col m-5">
             {navcon.items2.map((item, key) => (
-              <li key={key} className="my-1 show opacity-0">
+              <li key={key} className="my-1 animateLeft opacity-0">
                 <a
                   href={`/${item}`}
                   className="text-sky-200 font-bold font-poppins text-[20px] "

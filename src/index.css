@@ -86,6 +86,12 @@
   );
 }
 
+.bg-darkblue-gradient{
+  background: linear-gradient(
+    to right top, 
+    #3c65a3, #3c6096, #3b5b89, #3b557d, #3b5070);
+}
+
 .bg-discount-gradient {
   background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
 }

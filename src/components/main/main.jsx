@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { styles } from "../../../constants";
 import content from "./content";
 import Typewriter from "typewriter-effect";
+import { useEffect } from "react";
 
 const main = () => {
   return (
