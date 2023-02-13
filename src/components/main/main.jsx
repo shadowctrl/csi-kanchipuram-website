@@ -12,31 +12,36 @@ const main = () => {
     const entry = entries[0];
     SetIsIntersecting(entry.isIntersecting);
   };
-
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
+  };
   useEffect(() => {
-    const observer = new IntersectionObserver(callBackFunction);
+    const observer = new IntersectionObserver(callBackFunction, options);
     if (ref.current) observer.observe(ref.current);
 
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };
-  });
+  }, [ref, options]);
   return (
     <motion.div className={`py-28 px-24`}>
       <div>
-        <h1 className={` text-slate-300 font-poppins font-extrabold text-2xl`}>
+        <h1
+          ref={ref}
+          className={` text-slate-300 font-poppins font-extrabold text-2xl ${
+            !isIntersecting ? "bg-slate-100" : "bg-red-200"
+          }`}
+        >
           <Typewriter
             onInit={(typewriter) => {
-              typewriter
-                .typeString("Welcome To CSI - Kancheepuram Chapter")
-                .start();
+              typewriter.typeString("Welcome To CSI - Kancheepuram Chapter");
+              typewriter.start();
             }}
           />
         </h1>
-        <p
-          ref={ref}
-          className=" font-extralight font-poppins text-slate-300 py-10"
-        >
+        <p className=" font-extralight font-poppins text-slate-300 py-10">
           {`${content.welcome}`}
         </p>
       </div>
