@@ -16,7 +16,7 @@
 }
 
 .animateTop{
-    animation: fadeTop 1s linear forwards;
+    animation: fadeTop 0.5s linear forwards;
 
 }
 @keyframes fadeTop {
@@ -32,7 +32,7 @@
 }
 
 .animateLeft{
-    animation: liFadeLeft 1s linear 0.5s forwards;
+    animation: liFadeLeft 0.5s linear forwards;
 }
 
 .animateLeft li.show{

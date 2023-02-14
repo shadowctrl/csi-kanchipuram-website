@@ -55,11 +55,11 @@ const imageslide = () => {
         />
       </div>
 
-      <div className=" hidden group-hover:block absolute top-[73%] translate-x-[350px] translate-y-[-50%] left-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer ">
+      <div className=" hidden group-hover:block absolute top-[75%] translate-x-[350px] translate-y-[-50%] left-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer ">
         <IoIosArrowDropleftCircle size={30} onClick={prevSlide} />
       </div>
 
-      <div className="hidden group-hover:block absolute top-[73%] -translate-x-[350px] translate-y-[-50%] right-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer">
+      <div className="hidden group-hover:block absolute top-[75%] -translate-x-[350px] translate-y-[-50%] right-5 text-2xl rounded-full bg-black/60 text-white cursor-pointer">
         <IoIosArrowDroprightCircle size={30} onClick={nextSlide} />
       </div>
     </motion.div>

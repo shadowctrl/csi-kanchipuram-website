@@ -1,49 +1,39 @@
 import { React, useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import content from "./content";
-import Typewriter from "typewriter-effect";
-import { observe } from "react-intersection-observer";
+import { Welcome, Vision, Mission } from "./index";
+import "./main.css";
 
 const main = () => {
-  const ref = useRef(null);
+  const myref = useRef(null);
+  const myref2 = useRef(null);
+  const myref3 = useRef(null);
 
-  const [isIntersecting, SetIsIntersecting] = useState(false);
-  const callBackFunction = (entries) => {
-    const entry = entries[0];
-    SetIsIntersecting(entry.isIntersecting);
-  };
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1,
-  };
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [isIntersecting2, setIsIntersecting2] = useState(false);
+  const [isIntersecting3, setIsIntersecting3] = useState(false);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(callBackFunction, options);
-    if (ref.current) observer.observe(ref.current);
+    const observer = new IntersectionObserver((entries) => {
+      console.log(entries);
+      const [entry] = entries;
+      setIsIntersecting((e) => (e = e = entry.isIntersecting));
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, [ref, options]);
+      return isIntersecting;
+    });
+
+    if (myref.current) observer.observe(myref.current);
+  });
+
   return (
-    <motion.div className={`py-28 px-24`}>
+    <motion.div className={`py-16 px-24 mr-[150px] ml-[120px]`}>
+      <div ref={myref} className={`${isIntersecting ? "welcome" : ""}`}>
+        <Welcome />
+      </div>
+      <div className={`${isIntersecting ? "welcome" : ""}`}>
+        <Vision />
+      </div>
       <div>
-        <h1
-          ref={ref}
-          className={` text-slate-300 font-poppins font-extrabold text-2xl ${
-            !isIntersecting ? "bg-slate-100" : "bg-red-200"
-          }`}
-        >
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter.typeString("Welcome To CSI - Kancheepuram Chapter");
-              typewriter.start();
-            }}
-          />
-        </h1>
-        <p className=" font-extralight font-poppins text-slate-300 py-10">
-          {`${content.welcome}`}
-        </p>
+        <Mission />
       </div>
     </motion.div>
   );
