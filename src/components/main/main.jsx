@@ -4,35 +4,48 @@ import { Welcome, Vision, Mission } from "./index";
 import "./main.css";
 
 const main = () => {
-  const myref = useRef(null);
-  const myref2 = useRef(null);
-  const myref3 = useRef(null);
+  const welcome = useRef(null);
+  const vision = useRef(null);
+  const mission = useRef(null);
 
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const [isIntersecting2, setIsIntersecting2] = useState(false);
-  const [isIntersecting3, setIsIntersecting3] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      console.log(entries);
-      const [entry] = entries;
-      setIsIntersecting((e) => (e = e = entry.isIntersecting));
+    const options = {
+      root: null,
+      threshold: 0.7,
+      rootMargin: "0px",
+    };
 
-      return isIntersecting;
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("fadeLR");
+        if (!entry.isIntersecting) {
+          entry.target.classList.add("fadeRL");
+          entry.target.classList.remove("fadeLR");
+        }
+      });
+    };
+    const observer = new IntersectionObserver(callback, options);
+
+    const divs = document.querySelectorAll(
+      "div.welcome, div.vision, div.mission"
+    );
+
+    divs.forEach((div) => {
+      observer.observe(div);
     });
-
-    if (myref.current) observer.observe(myref.current);
   });
 
   return (
-    <motion.div className={`py-16 px-24 mr-[150px] ml-[120px]`}>
-      <div ref={myref} className={`${isIntersecting ? "welcome" : ""}`}>
+    <motion.div className={`py-16 px-24 mr-[150px] ml-[120px] `}>
+      <div className={`welcome opacity-0`}>
         <Welcome />
       </div>
-      <div className={`${isIntersecting ? "welcome" : ""}`}>
+      <div className={`vision opacity-0`}>
         <Vision />
       </div>
-      <div>
+      <div className={`mission opacity-0`}>
         <Mission />
       </div>
     </motion.div>
