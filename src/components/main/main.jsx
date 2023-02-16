@@ -21,8 +21,8 @@ const main = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add("fadeLR");
         if (!entry.isIntersecting) {
-          entry.target.classList.add("fadeRL");
           entry.target.classList.remove("fadeLR");
+          // entry.target.classList.add("fadeRL");
         }
       });
     };
