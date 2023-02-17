@@ -1,6 +1,6 @@
 import { React, useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Welcome, Vision, Mission } from "./index";
+import { Welcome, Vision, Mission, Events } from "./index";
 import "./main.css";
 
 const main = () => {
@@ -38,15 +38,22 @@ const main = () => {
   });
 
   return (
-    <motion.div className={`py-16 px-24 mr-[150px] ml-[120px] `}>
-      <div className={`welcome opacity-0`}>
-        <Welcome />
+    <motion.div>
+      <div className={`py-16 px-24 mr-[150px] ml-[120px] `}>
+        <div className={`welcome opacity-0`}>
+          <Welcome />
+        </div>
+        <div className={`vision opacity-0`}>
+          <Vision />
+        </div>
+        <div className={`mission opacity-0`}>
+          <Mission />
+        </div>
       </div>
-      <div className={`vision opacity-0`}>
-        <Vision />
-      </div>
-      <div className={`mission opacity-0`}>
-        <Mission />
+      <div className="flex justify-between items-center">
+        <div className="ml-[200px]">
+          <Events />
+        </div>
       </div>
     </motion.div>
   );
